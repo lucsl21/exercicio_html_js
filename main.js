@@ -1,7 +1,5 @@
 const form = document.getElementById('form-numero');
 
-
-
 form.addEventListener('submit', function(e){
     e.preventDefault();
     const campoA = document.getElementById('numero-1').value;
@@ -10,9 +8,19 @@ form.addEventListener('submit', function(e){
         const valorSucesso = document.querySelector('.sucesso');
         valorSucesso.innerHTML = ('Formulário enviado com sucesso');
         valorSucesso.style.display = 'block';
+
+        const valorErro = document.querySelector('.erro');
+        valorErro.innerHTML = ('Campo A maior que o Campo B - formulário não enviado');
+        valorErro.style.display = 'none';
+
+
     } else {
         const valorErro = document.querySelector('.erro');
         valorErro.innerHTML = ('Campo A maior que o Campo B - formulário não enviado');
         valorErro.style.display = 'block';
+
+        const valorSucesso = document.querySelector('.sucesso');
+        valorSucesso.innerHTML = ('Formulário enviado com sucesso');
+        valorSucesso.style.display = 'none';
     }
 })
